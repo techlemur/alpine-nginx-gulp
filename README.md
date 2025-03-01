@@ -1,15 +1,17 @@
-Quick and dirty Alpine image with NGINX and Gulp.
+**DEVELOPMENT USE ONLY DO NOT USE IN PRODUCTION**
 
-### Build
+Quick and dirty Alpine image with NGINX and Gulp.  
+
+## Build
 
 ```sh
 docker build --no-cache -t alpine-nginx-gulp . 
 ```
 
-### Run
+## Run
 
-Remember to have a gulp config file in your project directory.  (or copy the example gupfile.js from this repository)
+> Remember to have a gulpfile.js in your project directory.  (or copy the example gupfile.js from this repository)
 
 ```sh
-docker run --rm -it -p 3333:80 -p 4444:443 -p 8080-8085:8080-8085 -e SERVERADDRESS=127.0.0.1 -v "$PWD":/workbench alpine-nginx-gulp 
+docker run --rm -it -p 3333:80 -p 4444:443 -p 8080-8085:8080-8085 -v "$PWD":/workbench alpine-nginx-gulp 
 ```
